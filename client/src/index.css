@@ -1,0 +1,98 @@
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #28233b;
+  background: #f7f4fc;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+}
+/* Soft, student-friendly polish: keep the existing layout and pastel palette. */
+:root {
+  --student-glass: rgba(255, 255, 255, 0.76);
+  --student-glass-border: rgba(222, 211, 246, 0.78);
+  --student-shadow: 0 16px 42px rgba(102, 78, 145, 0.075);
+  --student-focus-ring: 0 0 0 4px rgba(170, 145, 226, 0.2);
+}
+
+::selection {
+  color: #44345f;
+  background: #e8ddff;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:not(:disabled) {
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+button:not(:disabled):active {
+  transform: translateY(1px) scale(0.99);
+}
+
+:where(button, a, input, select, textarea):focus-visible {
+  outline: none;
+  box-shadow: var(--student-focus-ring);
+}
+
+:where(.planner-card, .focus-card, .focus-stat-card, .buddy-card, .settings-card, .dashboard-card, .profile-card) {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+@keyframes studentSoftRise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes studentGlow {
+  0%, 100% { box-shadow: 0 10px 30px rgba(142, 117, 194, 0.06); }
+  50% { box-shadow: 0 14px 36px rgba(142, 117, 194, 0.12); }
+}
+
+.focus-card,
+.planner-card {
+  animation: studentSoftRise 420ms ease both;
+}
+
+.focus-card:hover,
+.planner-card:hover {
+  box-shadow: var(--student-shadow);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .focus-progress { transition: background 500ms ease, transform 250ms ease; }
+  .focus-card:hover .focus-progress { transform: scale(1.015); }
+}
+
+html[data-reduced-motion="true"] *,
+html[data-reduced-motion="true"] *::before,
+html[data-reduced-motion="true"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+  transition-duration: 0.01ms !important;
+}

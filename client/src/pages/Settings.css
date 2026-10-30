@@ -1,0 +1,694 @@
+
+.settings-page {
+  min-height: 100vh;
+  padding: 30px clamp(16px, 4vw, 48px) 50px;
+  background: linear-gradient(135deg, #f7f3ff, #edf3ff 55%, #fff4fa);
+  color: #352849;
+  font-family: inherit;
+}
+
+.settings-layout {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.settings-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 42px;
+}
+
+.settings-back {
+  padding: 10px 15px;
+  border: 1px solid #e5dcf4;
+  border-radius: 12px;
+  background: #ffffffb8;
+  color: #70589d;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.settings-brand {
+  color: #7962a7;
+  font-weight: 750;
+}
+
+.settings-heading {
+  margin-bottom: 28px;
+}
+
+.settings-eyebrow {
+  color: #9278c6;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.settings-heading h1 {
+  margin: 8px 0;
+  font-size: clamp(30px, 5vw, 42px);
+  letter-spacing: -1px;
+}
+
+.settings-heading h1 span {
+  font-size: 30px;
+}
+
+.settings-heading > p:last-child,
+.settings-muted {
+  color: #82768f;
+  line-height: 1.7;
+}
+
+.settings-columns {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  align-items: start;
+  gap: 22px;
+}
+
+.settings-menu,
+.settings-panel {
+  background: #ffffffd9;
+  border: 1px solid #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 16px 45px #66528c12;
+}
+
+.settings-menu {
+  padding: 16px;
+}
+
+.settings-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 8px 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee7f6;
+}
+
+.settings-avatar {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  background: #eee7ff;
+  font-size: 25px;
+}
+
+.settings-user strong,
+.settings-user small {
+  display: block;
+}
+
+.settings-user small {
+  margin-top: 5px;
+  color: #91859d;
+  font-size: 12px;
+}
+
+.settings-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: 13px 12px;
+  margin: 4px 0;
+  border: none;
+  border-radius: 13px;
+  background: transparent;
+  color: #70647e;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.settings-menu-item.active {
+  background: #eee7ff;
+  color: #7154b0;
+  font-weight: 750;
+}
+
+.settings-menu-item:hover {
+  background: #f5f0ff;
+}
+
+.settings-menu-arrow {
+  margin-left: auto;
+  font-size: 21px;
+}
+
+.settings-panel {
+  min-width: 0;
+  padding: clamp(20px, 4vw, 34px);
+}
+
+.settings-panel h2 {
+  margin: 0 0 8px;
+  font-size: 23px;
+  color: #38294e;
+}
+
+.settings-muted {
+  margin: 0 0 28px;
+  font-size: 13px;
+}
+
+.settings-panel label {
+  display: block;
+  margin: 23px 0 9px;
+  color: #554568;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.settings-panel input,
+.settings-panel select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 47px;
+  padding: 12px 14px;
+  border: 1px solid #e5dcef;
+  border-radius: 12px;
+  outline: none;
+  background: #fff;
+  color: #423451;
+  font: inherit;
+  font-size: 14px;
+}
+
+.settings-panel input:focus,
+.settings-panel select:focus {
+  border-color: #a58ad9;
+  box-shadow: 0 0 0 3px #a58ad926;
+}
+
+.settings-hint {
+  color: #8b7d99;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.theme-options,
+.buddy-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.theme-option,
+.buddy-option {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  padding: 18px 8px;
+  border: 1px solid #e9e0f4;
+  border-radius: 17px;
+  background: #fff;
+  color: #564568;
+  cursor: pointer;
+}
+
+.theme-option > span {
+  font-size: 28px;
+}
+
+.buddy-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Study Buddy animal images */
+.buddy-option > img,
+.buddy-option .buddy-image {
+  display: block;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.buddy-option {
+  min-height: 150px;
+  justify-content: center;
+}
+
+html[data-theme="dark"] .buddy-option.selected {
+  background: #352b49;
+  border-color: #a58bd8;
+  color: #e9ddff;
+}
+
+.theme-option.selected,
+.buddy-option.selected {
+  border: 2px solid #a58bd8;
+  background: #f5f0ff;
+  color: #7559b1;
+}
+
+.theme-option small,
+.buddy-option small {
+  font-size: 11px;
+}
+
+.settings-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #f0eaf6;
+}
+
+.settings-toggle-row strong {
+  font-size: 13px;
+}
+
+.settings-toggle-row p {
+  margin: 6px 0 0;
+  color: #8b7e98;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.settings-switch {
+  flex: 0 0 auto;
+  width: 46px;
+  height: 26px;
+  padding: 3px;
+  border: none;
+  border-radius: 20px;
+  background: #d9d1e5;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.settings-switch span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 1px 4px #0002;
+  transition: transform 0.2s;
+}
+
+.settings-switch.on {
+  background: #9578ce;
+}
+
+.settings-switch.on span {
+  transform: translateX(20px);
+}
+
+.settings-footer {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #eee7f6;
+}
+
+.settings-save {
+  min-width: 150px;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 13px;
+  background: linear-gradient(110deg, #a18add, #8298dc);
+  color: white;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+  box-shadow: 0 7px 18px #8d78c82b;
+}
+
+.settings-save:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.settings-message {
+  color: #7258a7;
+  font-size: 13px;
+}
+
+.settings-info {
+  margin: 22px 0;
+  padding: 18px;
+  border-radius: 14px;
+  background: #f6f1ff;
+  font-size: 13px;
+}
+
+.settings-info p {
+  margin-bottom: 0;
+  color: #7f718e;
+  line-height: 1.7;
+}
+
+.settings-secondary,
+.settings-danger {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 13px;
+  border: 1px solid #e5dcef;
+  border-radius: 12px;
+  background: white;
+  color: #6c5790;
+  cursor: pointer;
+  font: inherit;
+}
+
+.settings-danger {
+  border-color: #f3d7df;
+  color: #b44b6c;
+}
+
+.browser-notifications-card {
+  margin: 0 0 24px;
+  padding: 20px;
+  border: 1px solid #e7dcf8;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.93), rgba(241, 232, 255, 0.88));
+  box-shadow: 0 10px 28px rgba(104, 79, 145, 0.08);
+}
+
+.browser-notifications-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.browser-notifications-label {
+  margin: 0 0 6px;
+  color: #8b72bc;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.browser-notifications-header h3 {
+  margin: 0;
+  color: #382a4d;
+  font-size: 20px;
+}
+
+.browser-notifications-status {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.browser-notifications-status.allowed {
+  background: rgba(115, 185, 125, 0.12);
+  color: #2c7c43;
+}
+
+.browser-notifications-status.blocked {
+  background: rgba(201, 95, 124, 0.12);
+  color: #a63d59;
+}
+
+.browser-notifications-status.pending {
+  background: rgba(154, 129, 201, 0.12);
+  color: #65509a;
+}
+
+.browser-notifications-copy {
+  margin: 0 0 18px;
+  color: #756a85;
+  line-height: 1.7;
+  font-size: 13px;
+}
+
+.browser-notifications-button {
+  width: 100%;
+  min-height: 46px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #7d5eb4, #9e7dd4);
+  color: white;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(102, 82, 149, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.browser-notifications-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 24px rgba(102, 82, 149, 0.22);
+}
+
+.browser-notifications-button:disabled {
+  opacity: 0.75;
+  cursor: wait;
+}
+
+.browser-notifications-message {
+  margin: 14px 0 0;
+  color: #5b4d7a;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.browser-notifications-message.error {
+  color: #9a405f;
+}
+
+@media (max-width: 760px) {
+  .settings-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-menu {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3px;
+  }
+
+  .settings-user {
+    grid-column: 1 / -1;
+  }
+
+  .settings-menu-item {
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+
+  .settings-menu-arrow {
+    display: none;
+  }
+
+  .settings-topbar {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 420px) {
+  .settings-brand {
+    font-size: 12px;
+  }
+
+  .settings-menu {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-options {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-panel {
+    padding: 20px;
+  }
+}
+
+
+/* Settings UI improvements */
+.settings-layout {
+  max-width: 960px;
+}
+
+.settings-topbar {
+  margin-bottom: 28px;
+}
+
+.settings-heading {
+  margin-bottom: 22px;
+}
+
+.settings-heading h1 {
+  font-size: 34px;
+}
+
+.settings-columns {
+  grid-template-columns: 225px minmax(0, 1fr);
+  gap: 18px;
+}
+
+.settings-menu,
+.settings-panel {
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(91, 67, 137, 0.08);
+}
+
+.settings-menu {
+  padding: 12px;
+}
+
+.settings-menu-item {
+  padding: 11px 10px;
+}
+
+.settings-panel {
+  padding: 26px;
+}
+
+.settings-panel h2 {
+  font-size: 21px;
+}
+
+.settings-panel label {
+  margin-top: 18px;
+}
+
+.settings-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.settings-footer .settings-message {
+  flex: 1 1 100%;
+}
+
+@media (min-width: 761px) {
+  .settings-panel {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .settings-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark theme for the Settings page */
+html[data-theme="dark"] .settings-page {
+  background: linear-gradient(135deg, #191526, #20253a, #291d30);
+  color: #f0eafa;
+}
+
+html[data-theme="dark"] .settings-menu,
+html[data-theme="dark"] .settings-panel {
+  background: #292438;
+  border-color: #3c334d;
+}
+
+html[data-theme="dark"] .settings-panel h2,
+html[data-theme="dark"] .settings-user strong {
+  color: #f0eafa;
+}
+
+html[data-theme="dark"] .settings-muted,
+html[data-theme="dark"] .settings-toggle-row p {
+  color: #c0b4d0;
+}
+
+html[data-theme="dark"] .settings-panel input,
+html[data-theme="dark"] .settings-panel select,
+html[data-theme="dark"] .theme-option,
+html[data-theme="dark"] .buddy-option {
+  background: #211d2d;
+  color: #f0eafa;
+  border-color: #514563;
+}
+
+/* Personalized Your Study Space card */
+.settings-user {
+  align-items: center;
+  gap: 12px;
+  padding: 14px 8px 20px;
+}
+
+.settings-avatar {
+  width: 50px;
+  height: 50px;
+  flex: 0 0 50px;
+  overflow: hidden;
+  border: 2px solid #e5d8ff;
+  border-radius: 17px;
+  background: linear-gradient(135deg, #eee7ff, #fff0f8);
+  box-shadow: 0 5px 14px rgba(114, 86, 174, 0.12);
+}
+
+.settings-personal-avatar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.settings-user-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.settings-user-info strong {
+  overflow-wrap: anywhere;
+  color: #49355f;
+  font-size: 13px;
+}
+
+.settings-user-info small {
+  font-size: 11px;
+}
+
+.settings-avatar-edit {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #8564bd;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.settings-avatar-edit:hover {
+  color: #65459e;
+  text-decoration: underline;
+}
+
+html[data-theme="dark"] .settings-user-info strong {
+  color: #f0eafa;
+}
+
+html[data-theme="dark"] .settings-avatar-edit {
+  color: #c7b0ff;
+}
+
+.settings-avatar-edit:focus-visible {
+  outline: 2px solid #a58ad9;
+  outline-offset: 4px;
+  border-radius: 4px;
+}

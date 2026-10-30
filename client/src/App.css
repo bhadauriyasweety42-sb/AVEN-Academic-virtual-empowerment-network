@@ -1,0 +1,608 @@
+/* =====================================================
+   AI STUDENT MANAGER — LOGIN / SIGNUP
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+}
+
+/* =========================
+   MAIN LOGIN PAGE
+========================= */
+
+.auth-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(205, 186, 244, 0.42),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 88% 75%,
+      rgba(248, 196, 222, 0.38),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f5f0ff 0%,
+      #faf7ff 48%,
+      #fff4fa 100%
+    );
+}
+
+/* =========================
+   AMBIENT BACKGROUND
+========================= */
+
+.ambient {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(4px);
+}
+
+.ambient-one {
+  width: 380px;
+  height: 380px;
+  left: -170px;
+  top: -150px;
+  background: rgba(179, 150, 232, 0.18);
+}
+
+.ambient-two {
+  width: 300px;
+  height: 300px;
+  right: -120px;
+  top: 15%;
+  background: rgba(245, 185, 216, 0.16);
+}
+
+.ambient-three {
+  width: 320px;
+  height: 320px;
+  left: 45%;
+  bottom: -220px;
+  background: rgba(205, 191, 240, 0.18);
+}
+
+/* =========================
+   FLOATING OBJECTS
+========================= */
+
+.floating-object {
+  position: absolute;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  box-shadow:
+    0 12px 30px rgba(76, 57, 105, 0.08);
+
+  backdrop-filter: blur(10px);
+
+  font-size: 25px;
+
+  user-select: none;
+  pointer-events: none;
+}
+
+.book {
+  left: 10%;
+  top: 17%;
+}
+
+.pencil {
+  right: 13%;
+  top: 21%;
+}
+
+.sparkle {
+  left: 17%;
+  bottom: 20%;
+  color: #8f70c9;
+  font-size: 30px;
+}
+
+.calendar {
+  right: 10%;
+  bottom: 22%;
+}
+
+.coffee {
+  left: 27%;
+  top: 8%;
+}
+
+.laptop {
+  right: 28%;
+  bottom: 9%;
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.auth-card {
+  position: relative;
+  z-index: 5;
+
+  width: min(470px, 100%);
+
+  padding: 42px 44px 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  box-shadow:
+    0 30px 80px rgba(74, 54, 105, 0.12),
+    0 8px 25px rgba(74, 54, 105, 0.06);
+}
+
+/* =========================
+   BRAND
+========================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  margin-bottom: 30px;
+}
+
+.brand-mark {
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #8060b5,
+    #aa8cdb
+  );
+
+  color: white;
+  font-size: 21px;
+
+  box-shadow:
+    0 10px 22px rgba(105, 76, 153, 0.2);
+}
+
+.brand h1 {
+  margin: 0;
+
+  color: #392d4d;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  letter-spacing: -0.3px;
+}
+
+.brand p {
+  margin: 4px 0 0;
+
+  color: #94899e;
+
+  font-size: 11px;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.auth-heading {
+  margin-bottom: 27px;
+}
+
+.auth-heading h2 {
+  margin: 0 0 7px;
+
+  color: #332840;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: 31px;
+  font-weight: 600;
+
+  letter-spacing: -0.7px;
+}
+
+.auth-heading p {
+  margin: 0;
+
+  color: #8c8198;
+
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.input-group label {
+  color: #574a63;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* =========================
+   LABEL ROW
+========================= */
+
+.label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.forgot-button {
+  border: none;
+  padding: 0;
+
+  background: transparent;
+
+  color: #8b6dbd;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.forgot-button:hover {
+  color: #68499b;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.input-wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 48px;
+
+  border: 1px solid #e6deed;
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: #a88bcf;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 4px rgba(168, 139, 207, 0.1);
+}
+
+.input-icon {
+  width: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #a18bad;
+
+  font-size: 14px;
+}
+
+.input-wrapper input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  padding: 13px 13px 13px 0;
+
+  background: transparent;
+
+  color: #40364b;
+
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.input-wrapper input::placeholder {
+  color: #b1a8b8;
+}
+
+/* =========================
+   PASSWORD
+========================= */
+
+.password-toggle {
+  margin-right: 11px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #8c70b2;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.password-toggle:hover {
+  color: #654591;
+}
+
+/* =========================
+   TERMS
+========================= */
+
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #91869d;
+
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.terms-check {
+  width: 19px;
+  height: 19px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 6px;
+
+  background: #eee7f8;
+
+  color: #8062b2;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.terms b {
+  color: #70549b;
+}
+
+/* =========================
+   PRIMARY BUTTON
+========================= */
+
+.primary-button {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 3px;
+
+  border: none;
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7655a9,
+      #9b79d0
+    );
+
+  color: white;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 25px rgba(105, 76, 153, 0.2);
+
+  transition:
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.primary-button:hover {
+  box-shadow:
+    0 16px 32px rgba(105, 76, 153, 0.27);
+}
+
+.primary-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.button-arrow {
+  font-size: 17px;
+}
+
+/* =========================
+   LOGIN / SIGNUP SWITCH
+========================= */
+
+.auth-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  margin-top: 23px;
+
+  color: #978c9f;
+
+  font-size: 10.5px;
+}
+
+.auth-switch button {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #7455a2;
+
+  font-family: inherit;
+  font-size: 10.5px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.auth-switch button:hover {
+  color: #55347f;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.auth-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  margin-top: 27px;
+
+  color: #b0a5b6;
+
+  font-size: 9px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .auth-page {
+    padding: 25px 15px;
+  }
+
+  .auth-card {
+    padding: 32px 24px 25px;
+    border-radius: 25px;
+  }
+
+  .auth-heading h2 {
+    font-size: 27px;
+  }
+
+  .floating-object {
+    transform: scale(0.75);
+  }
+
+  .book {
+    left: 2%;
+  }
+
+  .pencil {
+    right: 2%;
+  }
+
+  .calendar,
+  .laptop {
+    display: none;
+  }
+}
+/* ===== Functional Font Size Settings ===== */
+
+html[data-font-size="small"] {
+  font-size: 14px;
+}
+
+html[data-font-size="medium"] {
+  font-size: 16px;
+}
+
+html[data-font-size="large"] {
+  font-size: 18px;
+}
+
+html[data-font-size="small"] body {
+  font-size: 0.875rem;
+}
+
+html[data-font-size="medium"] body {
+  font-size: 1rem;
+}
+
+html[data-font-size="large"] body {
+  font-size: 1.125rem;
+}

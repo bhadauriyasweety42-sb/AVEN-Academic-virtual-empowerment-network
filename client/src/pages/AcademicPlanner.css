@@ -1,0 +1,252 @@
+
+.academic-planner {
+  min-height: 100vh;
+  padding: 36px 24px 48px;
+  background: var(--bg, #f7f5fc);
+  color: var(--text, #28243a);
+  font-family: inherit;
+}
+
+.planner-header,
+.planner-card,
+.planner-preview {
+  width: min(100%, 820px);
+  margin: 0 auto;
+}
+
+.planner-back {
+  border: 1px solid var(--border, #e7e1f0);
+  border-radius: 12px;
+  padding: 10px 15px;
+  background: var(--card, #fff);
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.planner-eyebrow {
+  margin: 32px 0 8px;
+  color: #8064c8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.planner-header h1 {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 40px);
+}
+
+.planner-description {
+  line-height: 1.7;
+  color: var(--muted, #716b80);
+}
+
+.planner-card,
+.planner-preview {
+  box-sizing: border-box;
+  margin-top: 28px;
+  padding: 28px;
+  border: 1px solid var(--border, #e7e1f0);
+  border-radius: 20px;
+  background: var(--card, #fff);
+  box-shadow: 0 12px 35px rgba(45, 30, 80, 0.06);
+}
+
+.planner-file-icon {
+  font-size: 36px;
+}
+
+.planner-card h2,
+.planner-preview h2 {
+  margin: 12px 0;
+  font-size: 22px;
+}
+
+.planner-card p,
+.planner-preview p {
+  color: var(--muted, #716b80);
+  line-height: 1.7;
+}
+
+.planner-file-label {
+  display: inline-block;
+  margin: 12px 0;
+  padding: 10px 15px;
+  border: 1px dashed #9b83d9;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#academic-pdf {
+  display: block;
+  width: 100%;
+  margin: 8px 0 16px;
+  font: inherit;
+}
+
+.planner-selected-file {
+  overflow-wrap: anywhere;
+}
+
+.planner-upload-button {
+  width: 100%;
+  padding: 13px 18px;
+  border: 0;
+  border-radius: 12px;
+  background: #7957c8;
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.planner-upload-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.planner-message {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+
+.planner-error {
+  background: #fff0f0;
+  color: #a52b36;
+}
+
+.planner-success {
+  background: #edf9f0;
+  color: #246b39;
+}
+
+.planner-preview pre {
+  max-height: 500px;
+  overflow: auto;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--bg, #f7f5fc);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: inherit;
+  line-height: 1.7;
+}
+
+.planner-note {
+  width: min(100%, 820px);
+  margin: 22px auto;
+  color: var(--muted, #716b80);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .academic-planner {
+    padding: 24px 16px;
+  }
+
+  .planner-card,
+  .planner-preview {
+    padding: 20px;
+  }
+}
+
+.notes-content {
+  margin-top: 24px;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e7e1f5;
+  border-radius: 16px;
+  color: #334155;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.notes-content h1 {
+  font-size: 1.8rem;
+  color: #5b3db8;
+  border-bottom: 2px solid #e9e2ff;
+  padding-bottom: 12px;
+  margin: 28px 0 16px;
+}
+
+.notes-content h2 {
+  font-size: 1.4rem;
+  color: #5b3db8;
+  margin-top: 28px;
+}
+
+.notes-content h3 {
+  font-size: 1.15rem;
+  color: #293451;
+  margin-top: 22px;
+}
+
+.notes-content p {
+  margin: 12px 0;
+}
+
+.notes-content ul,
+.notes-content ol {
+  padding-left: 26px;
+  margin: 12px 0;
+}
+
+.notes-content li {
+  margin: 7px 0;
+}
+
+.notes-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  display: block;
+  overflow-x: auto;
+}
+
+.notes-content th,
+.notes-content td {
+  border: 1px solid #e2e8f0;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.notes-content th {
+  background: #f1edff;
+  color: #49318f;
+}
+
+.notes-content tr:nth-child(even) {
+  background: #faf9ff;
+}
+
+.notes-content code {
+  background: #f1edff;
+  color: #5b3db8;
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+
+.notes-content pre {
+  background: #f8f7fc;
+  padding: 16px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+@media (max-width: 600px) {
+  .notes-content {
+    padding: 16px;
+  }
+
+  .notes-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .notes-content h2 {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,261 @@
+.login-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 20% 20%, #eadcff 0, transparent 30%),
+    radial-gradient(circle at 80% 80%, #ffdff0 0, transparent 30%),
+    linear-gradient(135deg, #f8f3ff, #eee8fb 50%, #fff5fa);
+  color: #2e2450;
+  padding: 30px;
+}
+
+.login-card {
+  width: min(440px, 100%);
+  padding: 42px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 25px 70px rgba(74, 50, 110, 0.16);
+  backdrop-filter: blur(22px);
+  position: relative;
+  z-index: 5;
+}
+
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 35px;
+}
+
+.login-brand-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 22px;
+  background: linear-gradient(135deg, #8c5de8, #6840a8);
+  box-shadow: 0 10px 25px rgba(115, 75, 190, 0.25);
+}
+
+.login-brand h1 {
+  margin: 0;
+  font-size: 18px;
+  color: #33255b;
+}
+
+.login-brand p {
+  margin: 3px 0 0;
+  font-size: 11px;
+  color: #8a7b9e;
+}
+
+.login-heading {
+  margin-bottom: 25px;
+}
+
+.login-heading span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #8b5bd6;
+}
+
+.login-heading h2 {
+  margin: 8px 0;
+  font-family: Georgia, serif;
+  font-size: 32px;
+  color: #30204f;
+}
+
+.login-heading p {
+  margin: 0;
+  line-height: 1.6;
+  color: #897b9c;
+  font-size: 13px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.login-field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #514263;
+}
+
+.login-field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 15px;
+  border-radius: 13px;
+  border: 1px solid #e2d8ed;
+  outline: none;
+  background: rgba(255, 255, 255, 0.8);
+  color: #35254e;
+  font-size: 13px;
+  transition: 0.2s ease;
+}
+
+.login-field input:focus {
+  border-color: #9a72d5;
+  box-shadow: 0 0 0 4px rgba(142, 93, 210, 0.1);
+}
+
+.password-box {
+  position: relative;
+}
+
+.password-box input {
+  padding-right: 65px;
+}
+
+.password-box button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: #8057bd;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.login-button {
+  border: none;
+  border-radius: 14px;
+  padding: 15px;
+  margin-top: 4px;
+  background: linear-gradient(135deg, #8050d7, #6741a5);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 12px 25px rgba(111, 67, 175, 0.25);
+  transition: 0.2s ease;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+}
+
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-error {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fff0f2;
+  color: #c34d67;
+  font-size: 12px;
+}
+
+.login-switch {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 12px;
+  color: #8b7c9b;
+}
+
+.login-switch button {
+  border: none;
+  background: none;
+  color: #7548ba;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 10px;
+  color: #a092aa;
+}
+
+.login-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.glow-one {
+  width: 260px;
+  height: 260px;
+  background: rgba(174, 135, 235, 0.18);
+  top: -80px;
+  left: -60px;
+}
+
+.glow-two {
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 166, 207, 0.15);
+  right: -80px;
+  bottom: -100px;
+}
+
+.floating-item {
+  position: absolute;
+  z-index: 2;
+  font-size: 28px;
+  opacity: 0.75;
+}
+
+.book {
+  left: 14%;
+  top: 20%;
+}
+
+.pencil {
+  right: 16%;
+  top: 25%;
+}
+
+.coffee {
+  left: 17%;
+  bottom: 20%;
+}
+
+.sparkle {
+  right: 20%;
+  bottom: 25%;
+  color: #8a5bd4;
+}
+
+@media (max-width: 600px) {
+  .login-page {
+    padding: 18px;
+  }
+
+  .login-card {
+    padding: 30px 24px;
+  }
+
+  .floating-item {
+    display: none;
+  }
+}
