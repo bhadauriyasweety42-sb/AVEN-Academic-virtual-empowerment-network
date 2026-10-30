@@ -1,1 +1,1 @@
-# AURA-Ai-powered-unified-resource-assistant
+# AVEN-Academic-virtual-empowerment-network
